@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'all';
+  src: url('./components/fonts/Poppins-Medium.ttf');
+}
+
+
+body::-webkit-scrollbar-thumb{
+  width: 3px !important;
+  background: white;
+}
+
+body::-webkit-scrollbar{
+  width: 3px !important;
+  background: #00CDB0 ;
+}
+
+
+
+body {
+  margin: 0;
+  font-family: 'all' !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+/* .community-card{
+  background: url(/KinlinkCommunity/assets/images/community.jpg) center/cover;
+} */
+
+.hoverCardsDiv{
+  height: 1px;
+  width: 400px;
+  background-color: white;
+  position: absolute;
+  z-index: -1;
+  transform: translateX(-10px);
+
+
+  /* float: right; */
+  
+}
+
+.mainCard:hover{
+  background: rgb(226 232 240);
+}
+
+.mainCard:hover > .hoverCardsDiv{
+  animation: div .3s ease ;
+  animation-fill-mode: forwards;
+}
+
+@keyframes div {
+  0%{
+      height: 0px;
+      width: 0px;
+  }
+  50%{
+      height: 300px;
+      width: 400px;
+      border-radius: 50%;
+  }
+  100%{
+      height: 300px;
+      width: 400px;
+      border-radius: 10px;
+  }
+
+}
+
+.fromBottom{
+  transform: translateY(20px);
+  border-bottom: 0 !important;
+  opacity: 0;
+  font-weight: 600;
+}
+
+.hoverForBottom:hover ~ .fromBottom{
+  transform: translateY(0px);
+  opacity: 1;
+  border-bottom: 3px solid #00CDB0 !important;
+}
+
